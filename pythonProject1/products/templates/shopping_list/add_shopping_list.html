@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Создать новый список покупок{% endblock %}
+
+{% block content %}
+<div class="form-container">
+    <h2>Создать новый список покупок</h2>
+    <form method="post">
+        {% csrf_token %}
+
+        <div class="form-group">
+            <label for="name">Название списка:</label>
+            <input type="text" name="name" required>
+        </div>
+
+        <button type="submit" class="btn">Создать список</button>
+    </form>
+
+    <a href="{% url 'shopping_list' %}" class="back-link">Вернуться к спискам покупок</a>
+</div>
+{% endblock %}

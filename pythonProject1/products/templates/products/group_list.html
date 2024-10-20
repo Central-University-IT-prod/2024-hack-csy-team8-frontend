@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Список групп{% endblock %}
+
+{% block content %}
+<div class="group-list-container">
+    <h1>Список групп</h1>
+
+    <ul class="group-list">
+        {% for group in groups %}
+            <li class="group-item">
+                <h2>
+                    <a href="{% url 'group_detail' group.id %}">{{ group.name }}</a>
+                </h2>
+                <p>{{ group.description }}</p>
+                <div class="group-actions">
+                    <a href="{% url 'group_product_list' group.id %}" class="btn btn-primary">Перейти к продуктам</a>
+                    <a href="{% url 'add_member' group.id %}" class="btn btn-secondary">Добавить участника</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'create_group' %}" class="btn btn-success">Создать новую группу</a>
+</div>
+{% endblock %}
+

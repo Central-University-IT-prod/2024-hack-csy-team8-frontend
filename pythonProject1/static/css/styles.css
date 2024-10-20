@@ -1,0 +1,511 @@
+/* static/css/styles.css */
+
+/* Основные стили */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4; /* Светло-серый фон */
+}
+
+header {
+    background: #35424a; /* Темно-синий цвет */
+    color: #ffffff; /* Белый текст */
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav {
+    margin: 10px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #ffffff; /* Цвет ссылок */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    text-decoration: underline; /* Подчеркнутые ссылки при наведении */
+}
+
+.content {
+    padding: 20px;
+    background: #ffffff; /* Белый фон для контента */
+    max-width: 800px; /* Ширина контейнера */
+    margin: 20px auto; /* Центрирование контейнера */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для контейнера */
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #35424a; /* Темно-синий цвет */
+    color: #ffffff; /* Белый текст */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+/* Стили для страницы профиля */
+.profile-container {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.profile-container h1 {
+    font-size: 24px;
+    color: #35424a; /* Темно-синий цвет */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.profile-info {
+    font-size: 18px;
+    color: #333;
+}
+
+.profile-info p {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+}
+
+.profile-info i {
+    color: #35424a; /* Темно-синий цвет иконок */
+    margin-right: 10px;
+}
+/* Стили для формы добавления участника */
+.form-container {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.form-container h2 {
+    font-size: 24px;
+    color: #35424a; /* Темно-синий цвет */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+}
+
+.form-group input[type="text"],
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group select:focus {
+    border-color: #35424a; /* Темно-синий цвет при фокусе */
+}
+
+
+
+
+
+.form-group input[type="text"],
+.form-group input[type="date"],
+.form-group input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: #35424a; /* Темно-синий цвет при фокусе */
+}
+
+.btn:hover {
+    background-color: #2a3b4c; /* Темнее при наведении */
+}
+
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+
+/* Стили для страницы подтверждения удаления */
+.confirmation-container {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 600px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.confirmation-container h2 {
+    font-size: 24px;
+    color: #35424a; /* Темно-синий цвет */
+    margin-bottom: 20px;
+}
+
+.confirmation-container p {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background-color: #35424a;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s;
+    text-decoration: none;
+}
+
+
+.form-group input[type="text"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.form-group input[type="text"]:focus,
+.form-group textarea:focus {
+    border-color: #35424a; /* Темно-синий цвет при фокусе */
+}
+
+
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+    color: #35424a;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.back-link:hover {
+    color: #2a3b4c; /* Темнее при наведении */
+}
+/* Стили для списка групп */
+.group-list-container {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.group-list {
+    list-style: none;
+    padding: 0;
+}
+
+.group-item {
+    border-bottom: 1px solid #ddd;
+    padding: 15px 0;
+}
+
+.group-item h2 {
+    margin: 0 0 5px;
+    color: #35424a; /* Темно-синий цвет */
+}
+
+.group-item p {
+    margin: 5px 0 15px;
+    color: #555; /* Более светлый текст для описания */
+}
+
+.group-actions {
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #35424a; /* Синий цвет для кнопки "Перейти к продуктам" */
+}
+
+.btn-primary:hover {
+    background-color: #2a3b4c; /* Темнее при наведении */
+}
+
+.btn-secondary {
+    background-color: #7f8c8d; /* Серый цвет для кнопки "Добавить участника" */
+}
+
+.btn-secondary:hover {
+    background-color: #5e6e70; /* Темнее при наведении */
+}
+
+.btn-success {
+    background-color: #28a745; /* Зеленый цвет для кнопки "Создать новую группу" */
+}
+
+.btn-success:hover {
+    background-color: #218838; /* Темнее при наведении */
+}
+
+/* Стили для списка продуктов */
+.product-list-container {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.product-list {
+    list-style: none;
+    padding: 0;
+}
+
+.product-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.product-item:last-child {
+    border-bottom: none; /* Убираем границу у последнего элемента */
+}
+
+.product-name {
+    font-size: 18px;
+    color: #35424a; /* Темно-синий цвет */
+    margin-right: 20px;
+    flex-grow: 1; /* Заставляем название занимать всё доступное пространство */
+}
+
+.expired {
+    color: #e74c3c; /* Красный цвет для просроченных продуктов */
+    font-weight: bold;
+    margin-left: 10px; /* Отступ слева для просроченного текста */
+}
+
+.btn-danger {
+    background-color: #e74c3c; /* Красный цвет для кнопки "Удалить" */
+    border: none;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-danger:hover {
+    background-color: #c0392b; /* Темнее при наведении */
+}
+/* Стили для маленькой кнопки */
+.btn-small {
+    padding: 5px 10px; /* Меньшие отступы для компактного вида */
+    font-size: 14px; /* Меньший шрифт */
+}
+
+
+/* Стили для страницы списков покупок */
+.shopping-list-container {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.shopping-list {
+    list-style: none;
+    padding: 0;
+}
+
+.shopping-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.shopping-list-item:last-child {
+    border-bottom: none; /* Убираем границу у последнего элемента */
+}
+
+.empty-message {
+    font-size: 16px;
+    color: #888; /* Серый цвет для сообщения об отсутствии списков */
+    text-align: center; /* Центрирование текста */
+    margin: 20px 0; /* Отступы для сообщения */
+}
+.login-container {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center; /* Центрирование текста */
+}
+
+.login-container h2 {
+    font-size: 24px;
+    color: #35424a; /* Темно-синий цвет */
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left; /* Выравнивание текста в форме */
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.register-link {
+    margin-top: 10px;
+}
+
+.register-link a {
+    color: #007bff; /* Синий цвет для ссылки на регистрацию */
+    text-decoration: none;
+}
+
+.register-link a:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+/* Стили для страницы регистрации */
+.registration-container {
+    background-color: #fff;
+    padding: 20px;
+    max-width: 400px;
+    margin: 50px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center; /* Центрирование текста */
+}
+
+.registration-container h2 {
+    font-size: 24px;
+    color: #35424a; /* Темно-синий цвет */
+    margin-bottom: 20px;
+}
+
+.list-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.list-content a {
+    flex-grow: 1; /* Заставляем ссылку занимать всё доступное пространство */
+    text-decoration: none; /* Убираем подчеркивание у ссылки */
+    color: #35424a; /* Цвет ссылки */
+    font-size: 18px; /* Размер текста */
+}
+.delete-form {
+    margin-left: auto; /* Чтобы кнопка переместилась вправо */
+}
+.product-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Используем всю ширину элемента */
+}
+.product-details {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Чтобы расположить количество и срок годности */
+    width: 400px; /* Установите ширину, чтобы выровнять их между собой */
+    font-size: 14px; /* Размер текста для деталей */
+    color: #555; /* Более светлый текст для деталей */
+}
+.product-expiration {
+    font-size: 14px; /* Размер текста для деталей и срока годности */
+    color: #555; /* Более светлый текст для количества и срока годности */
+    margin-right: 20px; /* Отступ справа */
+}
+
+.update-form {
+    display: inline-block; /* Чтобы формы были на одной линии */
+}
+
+input[type="number"] {
+    width: 60px; /* Фиксированная ширина для полей ввода количества */
+    margin-right: 10px; /* Отступ справа для разделения элементов */
+    padding: 5px; /* Отступ внутри поля */
+    border: 1px solid #ccc; /* Граница */
+    border-radius: 4px; /* Закругленные углы */
+}
+.member-list {
+    list-style: none;
+    padding: 0;
+}
+
+.member-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.member-name {
+    flex-grow: 1;
+}
+

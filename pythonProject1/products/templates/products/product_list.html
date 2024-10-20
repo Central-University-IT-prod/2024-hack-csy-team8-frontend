@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}Список продуктов {% if group %}в группе {{ group.name }}{% else %}ваши продукты{% endif %}{% endblock %}
+
+{% block content %}
+<div class="product-list-container">
+    <h1>Список продуктов {% if group %}в группе "{{ group.name }}"{% else %}{% endif %}</h1>
+
+    <ul class="product-list">
+        {% for product in products %}
+            <li class="product-item">
+                <div class="product-content">
+                    <span class="product-name">{{ product.name }}</span>
+
+                    <span class="product-details">
+                        <span class="product-quantity">
+                            <input type="number" name="quantity" value="{{ product.quantity }}" min="1" required
+                                   data-product-id="{{ product.id }}" class="quantity-input">
+                        </span>
+                        <span class="product-expiration">  <strong>{{ product.expiration_date }}</strong></span>
+                        {% if product.is_expired %}
+                            <br><span class="expired">(Просрочен)</span></br>
+                        {% endif %}
+                    </span>
+
+                    <!-- Кнопка удаления справа -->
+                    <form action="{% url 'delete_product' product.id %}" method="post" class="delete-form" style="display:inline;">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-small"
+                                onclick="return confirm('Вы уверены, что хотите удалить этот продукт?');">
+                            Удалить
+                        </button>
+                    </form>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <!-- Если продукт добавляется в группу, используем соответствующий URL -->
+    {% if group %}
+        <a href="{% url 'add_product_in_group' group.id %}" class="btn btn-primary">Добавить продукт в группу</a>
+    {% else %}
+        <a href="{% url 'add_product' %}" class="btn btn-primary">Добавить продукт</a>
+    {% endif %}
+</div>
+
+<!-- Подключаем jQuery (или используем чистый JavaScript) для обработки AJAX-запросов -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        $('.quantity-input').on('input', function() {
+            const quantity = $(this).val();
+            const productId = $(this).data('product-id');
+            $.ajax({
+                url: "{% url 'update_product_quantity' '0' %}".replace('0', productId), // Заменяем 0 на ID продукта
+                type: 'POST',
+                data: {
+                    'quantity': quantity,
+                    'csrfmiddlewaretoken': '{{ csrf_token }}' // Получаем токен CSRF для безопасности
+                },
+                success: function(response) {
+                    console.log('Количество обновлено:', response.new_quantity);
+                },
+                error: function(xhr) {
+                    console.error('Ошибка обновления количества:', xhr);
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}
+
+
+
+

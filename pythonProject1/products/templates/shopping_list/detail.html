@@ -1,0 +1,35 @@
+<!-- templates/shopping_list/detail.html -->
+{% extends 'base.html' %}
+
+{% block title %}Список покупок: {{ shopping_list.name }}{% endblock %}
+
+{% block content %}
+<div class="shopping-list-detail-container">
+    <h2>Список покупок: {{ shopping_list.name }}</h2>
+    <h3>Продукты:</h3>
+    <ul class="product-list">
+        {% for item in shopping_list.shoppinglistproduct_set.all %}
+            <li class="product-item">
+                <div class="product-content">
+                    <span class="product-name">{{ item.product.name }}</span>
+                    <span class="product-quantity">(количество: {{ item.quantity }})</span>
+
+                    <!-- Форма для удаления продукта с выравниванием кнопки справа -->
+                    <form action="{% url 'delete_product_from_shopping_list' shopping_list.id item.product.id %}" method="post" class="delete-form">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btn-small"
+                                onclick="return confirm('Вы уверены, что хотите удалить этот продукт из списка покупок?');">
+                            Удалить
+                        </button>
+                    </form>
+                </div>
+            </li>
+        {% empty %}
+            <li>Нет продуктов в этом списке.</li>
+        {% endfor %}
+    </ul>
+
+    <a href="{% url 'add_product_to_shopping_list' shopping_list.id %}" class="btn btn-primary">Добавить продукт</a>
+    <a href="{% url 'shopping_list' %}" class="btn btn-secondary">Назад к спискам покупок</a>
+</div>
+{% endblock %}
